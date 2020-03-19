@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/css/bulma.min.css" rel="stylesheet" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rekap Aja</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="hero is-info welcome is-small">
+        <div class="hero-body">
+          <div class="container">
+            <a href="/home">
+              <img src="/img/logo.jpg" alt="ILogo" />
+            </a>
+            <h2 class="subtitle">
+              I hope you are having a great day!
+            </h2>
+          </div>
+        </div>
+      </section>
+      <section class="info-tiles">
+        <div class="tile is-ancestor has-text-centered">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <table class="table is-bordered pricing__table is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Tipe</th>
+                    <th>Tanggal</th>
+                    <th>Keterangan</th>
+                    <th>Total</th>
+                    <th>Hapus</th>
+                    <th>Perbaharui</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <%if (records.length >0){ %> <% records.forEach(function(row){
+                  %>
+                  <tr>
+                    <td><%= row.type %></td>
+                    <td><%= row.date %></td>
+                    <td><%= row.description %></td>
+                    <td><%= row.total %></td>
+                    <td>
+                      <form
+                        action="/type/deleteById/<%= row._id %>"
+                        method="post"
+                      >
+                        <button
+                          type="submit"
+                          class="button is-danger has-text-weight-small is-small"
+                        >
+                          Hapus
+                        </button>
+                      </form>
+                    </td>
+
+                    <td>
+                      <form action="/type/getOne/<%= row._id %>" method="post">
+                        <button
+                          type="submit"
+                          class="button is-info has-text-weight-small is-small"
+                        >
+                          Perbaharui
+                        </button>
+                      </form>
+                    </td>
+                  </tr>
+                  <% })}else{ %>
+                  <tr>
+                    <td colspan="6">No Record Found</td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

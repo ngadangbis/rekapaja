@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/css/bulma.min.css" rel="stylesheet" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rekap Aja</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+      rel="stylesheet"
+    />
+
+
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="hero is-info welcome is-small">
+        <div class="hero-body">
+          <div class="container">
+            <a href="/home">
+              <img src="/img/logo.jpg" alt="ILogo" />
+            </a>
+            <h2 class="subtitle">
+              I hope you are having a great day!
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="columns is-centered is-vcentered is-mobile">
+          <div class="column is-narrow has-text-centered">
+            <div class="circle">
+              <font-awesome-icon col size="2x" :icon="['fas', 'tasks']" />
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Tambah Data Pemasukan</label>
+                <br>
+              </div>
+              <form
+              action="/type/insertDataDebit"
+              method="post"
+            >
+              <div class="field">
+                <label class="label">Tanggal</label>
+                <input type="date" id="dates" name="dates"  class="input is-medium" type="text"> 
+              </div>
+              <div class="field">
+                <label class="label">Total</label>
+                <div class="control">
+                  <input class="input is-medium" type="number" id="total" name="total" />
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Keterangan</label>
+                <div class="control">
+                  <input class="input is-medium" type="text"  id="description" name="description"/>
+                </div>
+              </div>
+       
+              <button
+                type="submit"
+                class="button is-link is-fullwidth has-text-weight-medium is-medium"
+              >
+                Simpan
+              </button>
+            </form>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+    </div>
+  </body>
+</html>

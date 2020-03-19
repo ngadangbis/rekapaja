@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="/css/bulma.min.css" rel="stylesheet" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <form action="/home" method="get">
+      <title>Rekap Aja</title>
+    </form>
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="hero is-info welcome is-small">
+        <div class="hero-body">
+          <div class="container">
+            <a href="/home">
+              <img src="/img/logo.jpg" alt="ILogo" />
+            </a>
+            <h2 class="subtitle">
+              I hope you are having a great day!
+            </h2>
+          </div>
+        </div>
+      </section>
+      <section class="info-tiles">
+        <div class="tile is-ancestor has-text-centered">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Rp <%= debit %></p>
+              <p class="subtitle">Pengeluaran</p>
+              <form action="/type/getDebit/" method="get">
+                <button
+                  type="submit"
+                  class="button is-link is-fullwidth has-text-weight-medium is-medium"
+                >
+                  Lihat Data Pengeluaran
+                </button>
+              </form>
+              <br />
+              <form action="/type/insertDebit/" method="get">
+                <button
+                  type="submit"
+                  class="button is-link is-fullwidth has-text-weight-medium is-medium"
+                >
+                  Tambah Data Pengeluaran
+                </button>
+              </form>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Rp <%= credit %></p>
+              <p class="subtitle">Pendapatan</p>
+              <form action="/type/getCredit/" method="get">
+                <button
+                  type="submit"
+                  class="button is-link is-fullwidth has-text-weight-medium is-medium"
+                >
+                  Lihat Data Pendapatan
+                </button>
+              </form>
+              <br />
+              <form action="/type/insertCredit/" method="get">
+                <button
+                  type="submit"
+                  class="button is-link is-fullwidth has-text-weight-medium is-medium"
+                >
+                  Tambah Data Pendapatan
+                </button>
+              </form>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
